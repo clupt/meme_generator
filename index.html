@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <header class="header">MEMEFACTORY</header>
+    <section id="form-container">
+      <form id="the-form" class="form" type="submit">
+        <div class="form-div">
+          <label for="url" class="label">url </label>
+          <input type="text" id="url" class="input-field" placeholder="enter img url">
+        </div>
+        <div class="form-div">
+          <label for="top" class="label">top </label>
+          <input type="text" id="top-text" class="input-field" placeholder="enter top text">
+        </div>
+        <div class="form-div">
+          <label for="bot" class="label">bot </label>
+          <input type="text" id="bot-text" class="input-field" placeholder="enter bot text">
+        </div>
+        <div class="form-div">
+          <button class="button" id="engage">engage</button>
+        </div>
+      </form>
+    </section>
+    <hr>
+
+    <section id="meme-container"></section>
+
+    <script src="app.js"></script>
+  </body>
+
+</html>

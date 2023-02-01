@@ -1,0 +1,16 @@
+:root {
+    --primary: #edf2f4;
+    --secondary: #ef233c;
+    --tertiary: #2b2d42;
+    /* others from pallete: 8D99AE, D80032 */
+}
+
+body {
+    background-color: var(--primary);
+}
+
+#meme-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--tertiary);
+}
