@@ -4,21 +4,6 @@ const engageBtn = document.querySelector('#engage');
 const url = document.querySelector('#url');
 const topText = document.querySelector('#top-text');
 const botText = document.querySelector('#bot-text');
-/*
-  Todos:
-  -- add event listener to the button that creates a new meme,appends the
-     new image from the url, adds the top and bottom text to the image,
-     and appends the new meme to the meme-container
-
-  -- add classes to each of the elements when they are created, for styling
-
-  -- prevent default submit action of form when btn is clicked
-
-  -- reset values of the input fields after the button is clicked
-
-  -- add an optional button to use a random image taken from a list of meme imgs
-
-*/
 
 engageBtn.addEventListener('click', function (e) {
   e.preventDefault();
@@ -69,13 +54,22 @@ function resetValues() {
 }
 
 /*
-a couple of meme urls for testing
-
-https://images.theconversation.com/files/38926/original/5cwx89t4-1389586191.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip
+              a couple of meme urls for testing
 
 https://cdn.britannica.com/19/213119-050-C81C786D/Grumpy-Cat-2015-memes.jpg
 
 https://makeameme.org/media/templates/250/one-does-not-simply.jpg
+
+*/
+
+/*
+                                  Todos:
+
+  -- add an optional button to use a random image taken from a list of meme imgs
+
+  -- add delete icon to display when image is going to be removed to the meme
+
+  -- possibly extract some funcs to reduce repetition (adding classes etc...)
 */
 
 

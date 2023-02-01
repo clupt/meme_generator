@@ -2,7 +2,7 @@
     --primary: #edf2f4;
     --secondary: #ef233c;
     --tertiary: #2b2d42;
-    /* others from pallete: 8D99AE, D80032 */
+    /* others from palette: 8D99AE, D80032 */
 }
 
 body {
@@ -10,7 +10,66 @@ body {
 }
 
 #meme-container {
-    width: 100vw;
-    height: 100vh;
+    box-sizing: border-box;
     background-color: var(--tertiary);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
 }
+
+.new-img {
+    width: 100%;
+    height: 100%;
+}
+
+.new-meme {
+    position: relative;
+    display: inline-block;
+    color: white;
+    width: 400px;
+    height: 400px;
+    flex-direction: row;
+    border-radius: 2.5%;
+    overflow: hidden;
+}
+
+.new-meme:hover {
+    opacity: .5;
+}
+
+.top, .bot {
+    position: absolute;
+    font-size: 3em;
+    left:100px;
+}
+
+.top {
+    top: 10px;
+}
+
+.bot {
+    bottom: 10px;
+}
+
+/*
+    Todos:
+
+    background styling: photo?
+
+    header styling
+
+    form:
+    flexbox
+    input styling: input sizes, border color, focus animations?
+
+    button styling: hover effects
+
+    meme-styling:
+    all uppercase
+    font size and text border
+    animation on hover before deletion
+    show delete icon/reduce opacity on hover
+
+*/
