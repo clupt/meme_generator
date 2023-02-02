@@ -14,6 +14,10 @@ engageBtn.addEventListener('click', function (e) {
 });
 
 function generateMeme() {
+  const deleteIcon = document.createElement('div');
+  deleteIcon.classList.add('delete-icon');
+  deleteIcon.setHTML('<i class="fa fa-window-close" aria-hidden="true"></i>');
+
   //create the image from the url
   const newImg = document.createElement('img');
   newImg.classList.add('new-img');
@@ -22,7 +26,6 @@ function generateMeme() {
   //add the image to the meme
   const newMeme = document.createElement('div');
   newMeme.classList.add('new-meme');
-  newMeme.append(newImg);
 
   //prepare the top text for the meme
   const top = document.createElement('span');
@@ -35,7 +38,7 @@ function generateMeme() {
   bot.classList.add('bot');
 
   //add top and bot text to the meme
-  newMeme.append(top, bot);
+  newMeme.append(top, bot, newImg, deleteIcon);
 
   //add the meme to the meme-container
   memeContainer.append(newMeme);
@@ -64,8 +67,6 @@ https://makeameme.org/media/templates/250/one-does-not-simply.jpg
                                   Todos:
 
   -- add an optional button to use a random image taken from a list of meme imgs
-
-  -- add delete icon to display when image is going to be removed to the meme
 
   -- possibly extract some funcs to reduce repetition (adding classes etc...)
 */
