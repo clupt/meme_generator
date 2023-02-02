@@ -26,12 +26,12 @@ function generateMeme() {
 
   //prepare the top text for the meme
   const top = document.createElement('span');
-  top.innerText = `${topText.value}`;
+  top.innerText = `${topText.value.toUpperCase()}`;
   top.classList.add('top');
 
   //prepare the bot text for the meme
   const bot = document.createElement('span');
-  bot.innerText = `${botText.value}`;
+  bot.innerText = `${botText.value.toUpperCase()}`;
   bot.classList.add('bot');
 
   //add top and bot text to the meme
@@ -60,9 +60,7 @@ https://cdn.britannica.com/19/213119-050-C81C786D/Grumpy-Cat-2015-memes.jpg
 
 https://makeameme.org/media/templates/250/one-does-not-simply.jpg
 
-*/
 
-/*
                                   Todos:
 
   -- add an optional button to use a random image taken from a list of meme imgs
