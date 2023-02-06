@@ -13,6 +13,18 @@ engageBtn.addEventListener('click', function (e) {
   resetValues();
 });
 
+/*
+  Use event delegation to remove memes upon clicking icons in the meme-container
+  Needs to go two parent levels up, since the icons are appended to the imgs
+  which are then appended to the newMeme divs
+*/
+
+memeContainer.addEventListener('click', function (e) {
+  if (e.target.tagName === 'I') {
+    e.target.parentElement.parentElement.remove();
+  }
+});
+
 function generateMeme() {
   const deleteIcon = document.createElement('div');
   deleteIcon.classList.add('delete-icon');
@@ -42,11 +54,6 @@ function generateMeme() {
 
   //add the meme to the meme-container
   memeContainer.append(newMeme);
-
-  //eventListener to remove the meme from the meme-container on click
-  newMeme.addEventListener('click', function () {
-    newMeme.remove();
-  });
 }
 
 // function to clear the values from the inputs after meme submission
