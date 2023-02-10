@@ -118,6 +118,11 @@ input:focus {
     color: var(--secondary);
 }
 
+#buttons-container {
+    display: flex;
+    justify-content: center;
+}
+
 .button {
     margin-left: 20px;
     height: 40px;
