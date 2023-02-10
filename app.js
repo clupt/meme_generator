@@ -1,4 +1,4 @@
-// query selection
+//query selection
 const memeContainer = document.querySelector('#meme-container');
 const engageBtn = document.querySelector('#engage');
 const randomBtn = document.querySelector('#random');
@@ -33,11 +33,25 @@ memeContainer.addEventListener('click', function (e) {
   }
 });
 
-//main meme generator function
-function generateMeme() {
+//overlapping functions for meme generation and random generation functions
+function createDelete() {
   const deleteIcon = document.createElement('div');
   deleteIcon.classList.add('delete-icon');
   deleteIcon.setHTML('<i class="fa fa-window-close" aria-hidden="true"></i>');
+  return deleteIcon;
+}
+
+function createNewMeme() {
+  const newMeme = document.createElement('div');
+  newMeme.classList.add('new-meme');
+  return newMeme;
+}
+
+
+//main meme generator function
+function generateMeme() {
+  //create deleteIcon
+  const deleteIcon = createDelete();
 
   //create the image from the url
   const newImg = document.createElement('img');
@@ -45,8 +59,7 @@ function generateMeme() {
   newImg.src = url.value;
 
   //add the image to the meme
-  const newMeme = document.createElement('div');
-  newMeme.classList.add('new-meme');
+  const newMeme = createNewMeme();
 
   //prepare the top text for the meme
   const top = document.createElement('span');
@@ -99,19 +112,16 @@ const botStrings = [
 //random meme generation
 function generateRandomMeme() {
   //create a delete icon
-  const deleteIcon = document.createElement('div');
-  deleteIcon.classList.add('delete-icon');
-  deleteIcon.setHTML('<i class="fa fa-window-close" aria-hidden="true"></i>');
+  const deleteIcon = createDelete();
 
   //select a random image from the list
   shuffle(imgsArr);
-  const randomImg = document.createElement('img');
-  randomImg.classList.add('new-img');
-  randomImg.src = imgsArr[0].imgSrc;
+  const newImg = document.createElement('img');
+  newImg.classList.add('new-img');
+  newImg.src = imgsArr[0].imgSrc;
 
   //add the image to the meme
-  const newMeme = document.createElement('div');
-  newMeme.classList.add('new-meme');
+  const newMeme = createNewMeme();
 
   //select a random string for top text from the list
   const top = document.createElement('span');
@@ -126,7 +136,7 @@ function generateRandomMeme() {
   bot.classList.add('bot');
 
   //add the top and bot text to the meme
-  newMeme.append(top, bot, randomImg, deleteIcon);
+  newMeme.append(top, bot, newImg, deleteIcon);
 
   //add the meme to the memeContainer
   memeContainer.append(newMeme);
@@ -155,7 +165,7 @@ https://cdn.britannica.com/19/213119-050-C81C786D/Grumpy-Cat-2015-memes.jpg
 
 https://makeameme.org/media/templates/250/one-does-not-simply.jpg
 
-                              Todos:
-          the meme gen and random gen functions have a lot of overlap
+                            Refactor thoughts:
+          the meme gen and random gen functions still have some overlap
 */
 

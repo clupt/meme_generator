@@ -177,7 +177,6 @@ input:focus {
     left: 50%;
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: black;
-    /* use transform to center the text! */
     transform: translate(-50%);
 }
 
